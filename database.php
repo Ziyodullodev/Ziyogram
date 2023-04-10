@@ -18,7 +18,7 @@ class Database {
     }
 
     public function getUser($id) {
-        $stmt = $this->db->prepare('SELECT * FROM users WHERE id = :id');
+        $stmt = $this->db->prepare('SELECT * FROM users WHERE chat_id = :id');
         $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
         $result = $stmt->execute();
         return $result->fetchArray(SQLITE3_ASSOC);
