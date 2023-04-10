@@ -1,0 +1,45 @@
+Pastdagi malumotlarni ozingizga kerakligini copy qilib ishlatasiz 
+
+$type = $message->chat->type ?? null;
+$mid = $message->message_id ?? null;
+$reply = $message->reply_to_message->text ?? null;
+$user = $message->from->username ?? null;
+
+Contact malumotlarini olish uchun 
+$contact = $message->contact ?? null;
+$contactid = $contact->user_id ?? null;
+$contactuser = $contact->username ?? null;
+$contactname = $contact->first_name ?? null;
+$phonenumber = $contact->phone_number ?? null;
+
+Reply message
+$reply = $message->reply_to_message->text ?? null ?? null;
+$messagereply = $message->reply_to_message->message_id ?? null;
+
+
+---------- channel update ----------
+
+$channel = $update->channel_post  ?? null; 
+$channel_text = $channel->text  ?? null;
+$channel_mid = $channel->message_id  ?? null; 
+$channel_id = $channel->chat->id  ?? null; 
+$channel_user = $channel->chat->username  ?? null; 
+$chanel_doc = $channel->document  ?? null; 
+$chanel_vid = $channel->video  ?? null; 
+$chanel_mus = $channel->audio  ?? null; 
+$chanel_voi = $channel->voice  ?? null; 
+$channel_title = $channel->chat->title  ?? null;
+$chanel_gif = $channel->animation  ?? null; 
+$chanel_fot = $channel->photo  ?? null; 
+$caption=$channel->caption  ?? null;
+
+
+$type = $update->callback_query->message->chat->type ?? null;
+$from_id = $update->callback_query->from->id ?? null;
+$first_name = $update->callback_query->from->first_name ?? null;
+$message_id = $update->callback_query->message->message_id ?? null;
+$userid = $update->callback_query->from->username ?? null;
+
+inline query uchun
+$query = $update->inline_query->query ?? null;
+$inlineid = $update->inline_query->from->id ?? null;
