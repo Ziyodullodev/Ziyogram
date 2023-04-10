@@ -85,4 +85,11 @@ class Telegram {
         $params['reply_markup'] = $key;
         $this->Ziyogram('sendAudio', $params);
     }  
+
+    public function setWebhook($url) {
+        $params['url'] = $url;
+
+        $this->Ziyogram('setWebhook', $params);
+    }
+
 }
