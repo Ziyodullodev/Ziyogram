@@ -5,10 +5,10 @@ class Database {
     
     public function __construct() {
         $this->db = new SQLite3('database.db');
-        $this->db->query('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, chat_id INTEGER, created_at TEXT)');
+        $this->db->query('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name VARCHAR(100), chat_id VARCHAR(20), created_at TEXT)');
         echo "created";
     }
-
+    // CREATE TABLE odamlar (id INT PRIMARY KEY AUTO_INCREMENT, ismi VARCHAR(40) DEFAULT 'kiritilmagan' NOT NULL
     public function addUser($name, $chat_id) {
         $stmt = $this->db->prepare('INSERT INTO users (name, chat_id, created_at) VALUES (:name, :chat_id, :created_at)');
         $stmt->bindValue(':name', $name, SQLITE3_TEXT);
