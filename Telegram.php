@@ -92,4 +92,16 @@ class Telegram {
         $this->Ziyogram('setWebhook', $params);
     }
 
+
+    public function makeKeyboard($keys = array(), $c = 2) 
+    {
+        $i = 0;
+        foreach( $keys as $key => $v)
+        {
+            $keytype=['text'=>$v];
+            $k[floor($i/$c)][$i%$c]=$keytype;
+            $i++;
+        }
+        return json_encode(array('keyboard'=>$k,'resize_keyboard'=>true));
+    }
 }
