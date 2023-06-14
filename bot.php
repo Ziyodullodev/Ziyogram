@@ -2,10 +2,9 @@
 
 $admin = ''; // bu yerga ozingizni chat_id ingizni qo'yasiz
 
-require "Telegram.php";
+require "tg.php";
 require "database.php";
-
-$tg = new Telegram();
+$tg = new Telegram($token);
 $db = new Database();
 
 $update = json_decode(file_get_contents('php://input'));
